@@ -1,0 +1,32 @@
+{
+  "name": "dsa-backend-service",
+  "version": "1.0.0",
+  "description": "Backend service for DSA progress tracking from GFG and Striver sheet using ScrapingBee",
+  "main": "backend-example.js",
+  "scripts": {
+    "start": "node backend-example.js",
+    "dev": "nodemon backend-example.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dsa",
+    "gfg",
+    "striver",
+    "scrapingbee",
+    "api",
+    "web-scraping"
+  ],
+  "author": "Gaurav Sahu",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
