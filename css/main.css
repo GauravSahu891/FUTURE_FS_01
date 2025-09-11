@@ -801,7 +801,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="button"] {
   display: inline-block;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins","Roboto", sans-serif;
   font-weight: 700;
   font-size: 1.4rem;
   text-transform: uppercase;
@@ -889,6 +889,7 @@ button.btn--stroke {
   background: transparent !important;
   border: 0.2rem solid #000000;
   color: #000000;
+  border-radius: 8px;
 }
 
 .btn--stroke:hover,
@@ -2737,7 +2738,7 @@ input::-moz-focus-inner {
 .s-works {
   padding-top: 10.2rem;
   padding-bottom: 16rem;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
 }
 
@@ -2775,11 +2776,18 @@ input::-moz-focus-inner {
   padding: 40px 30px;
   background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-  border: 1px solid rgba(207, 23, 103, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+  border: 2px solid rgba(207, 23, 103, 0.1);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(10px);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
 }
 
 .item-folio::before {
@@ -2788,10 +2796,11 @@ input::-moz-focus-inner {
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
+  height: 5px;
   background: linear-gradient(90deg, #cf1767, #e91e63, #cf1767);
   background-size: 200% 100%;
   animation: gradientShift 3s ease infinite;
+  border-radius: 24px 24px 0 0;
 }
 
 @keyframes gradientShift {
@@ -2801,9 +2810,11 @@ input::-moz-focus-inner {
 }
 
 .item-folio:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(207, 23, 103, 0.2);
-  border-color: rgba(207, 23, 103, 0.3);
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 50px rgba(207, 23, 103, 0.25);
+  border-color: rgba(207, 23, 103, 0.4);
+  background: linear-gradient(145deg, #ffffff 0%, #f0f2f5 100%);
+  animation: none;
 }
 
 /* item-folio thumb
@@ -2811,13 +2822,15 @@ input::-moz-focus-inner {
 .item-folio__thumb {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
-  margin-bottom: 20px;
+  border-radius: 20px;
+  margin-bottom: 24px;
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  min-height: 200px;
+  min-height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .project-placeholder {
@@ -2825,24 +2838,26 @@ input::-moz-focus-inner {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 2rem;
   text-align: center;
   transition: all 0.3s ease;
 }
 
 .project-placeholder i {
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: #cf1767;
-  margin-bottom: 15px;
+  margin-bottom: 1.2rem;
   transition: all 0.3s ease;
+  text-shadow: 0 4px 8px rgba(207, 23, 103, 0.2);
 }
 
 .project-placeholder span {
-  font-size: 1.4rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #333;
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .item-folio:hover .project-placeholder i {
@@ -2960,11 +2975,12 @@ input::-moz-focus-inner {
 .item-folio__title {
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
   position: relative;
   font-family: 'Poppins', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   line-height: 1.3;
+  letter-spacing: -0.5px;
 }
 
 .item-folio__title::after {
@@ -2985,23 +3001,26 @@ input::-moz-focus-inner {
 }
 
 .item-folio__cat {
-  font-weight: 500;
+  font-weight: 600;
   color: #cf1767;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
   font-style: normal;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  background: rgba(207, 23, 103, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
+  letter-spacing: 0.8px;
+  background: linear-gradient(135deg, rgba(207, 23, 103, 0.1), rgba(233, 30, 99, 0.1));
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
   display: inline-block;
   transition: all 0.3s ease;
+  border: 1px solid rgba(207, 23, 103, 0.2);
 }
 
 .item-folio:hover .item-folio__cat {
-  background: rgba(207, 23, 103, 0.2);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(207, 23, 103, 0.2), rgba(233, 30, 99, 0.2));
+  transform: translateY(-3px);
+  border-color: rgba(207, 23, 103, 0.4);
+  box-shadow: 0 4px 15px rgba(207, 23, 103, 0.2);
 }
 
 .item-folio__caption {
